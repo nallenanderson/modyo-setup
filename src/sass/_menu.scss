@@ -1,0 +1,64 @@
+#main-menu {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 240px;
+  background-color: #393f4a;
+  font-weight: 300;
+  z-index: 101;
+  overflow: visible;
+  .nav-brand {
+    display: block;
+    background: url("https://company.modyo.rocks/assets/admin/logo-modyo-300x87-b1d19269aab62a7fa731c185f3afec57.png") no-repeat 20px 18px;
+    background-size: 80px;
+    height: 61px;
+    border-bottom: solid 1px rgba(0,0,0,0.4);
+    color: #FFF;
+  }
+  .dropdown>a.account-dropdown-btn {
+    font-size: 14px;
+    padding-top: 14px;
+    display: block;
+    padding: 10px 20px;
+    background: rgba(0,0,0,0.2);
+    height: 41px;
+    border-bottom: solid 1px rgba(0,0,0,0.2);
+    color: #FFF;
+  }
+  .mm-title {
+    display: inline-block;
+    padding: 18px 0 18px 20px;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.8);
+    font-size: 19px;
+  }
+  .mm-listview {
+    border: 1px solid rgba(0,0,0,0.15);
+    font-size: 16px;
+    line-height: 20px;
+    padding-left: 0;
+    margin-top: -5px;
+    li {
+      list-style: none;
+      display: block;
+      padding: 0;
+      margin: 0;
+      border-top: 1px solid rgba(0,0,0,0.15);
+      border-bottom: 1px solid rgba(0,0,0,0.15);
+      &:hover {
+        color: rgba(255,255,255,0.7);
+        background-color: rgba(0,0,0,0.1);
+      }
+      a {
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden;
+        color: rgba($white, 0.7);
+        display: block;
+        padding: 10px 10px 10px 20px;
+        margin: 0;
+      }
+    }
+  }
+}

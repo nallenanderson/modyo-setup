@@ -1,0 +1,102 @@
+/***************************************************************************************
+Import all modularized SCSS files first.
+***************************************************************************************/
+@import '_transitions';
+@import '_colors';
+@import '_menu';
+@import '_page_context';
+@import '_profile';
+
+
+/***************************************************************************************
+These are here for informational purposes only. Feel free to delete.
+***************************************************************************************/
+html {
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+body {
+  color: $black;
+  background: $white;
+  font-size: 14px;
+  font-weight: 300;
+  font-family: "Roboto", sans-serif;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: 0;
+  padding: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: $black;
+  font-weight: 400;
+}
+
+a {
+  text-decoration: none;
+  color: $green;
+}
+
+#main {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 240px;
+  right: 0;
+  overflow: hidden;
+}
+
+.padding-all {
+  padding: 15px !important;
+}
+
+.clear {
+  clear: both;
+}
+
+.hidden {
+  display: none;
+}
+
+.big-button {
+  display: inline-block;
+  border-radius: 2px;
+  padding: 6px 22px;
+  font-size: 18px;
+  background: $white;
+  border: solid 1px rgba($black, 0.1);
+  box-shadow: 0 4px 5px rgba($black, 0.4);
+  line-height: 1.6;
+  transition: 0.1s ease-in-out;
+  margin-right: 10px;
+  &:hover {
+    background: darken($white, 3%);
+  }
+}
+
+.label {
+  background: rgba($black, 0.1);
+  font-size: 12px;
+  color: rgba($black, 0.8);
+  font-weight: 400;
+  padding: 5px 8px;
+  border-radius: 6px;
+  margin: 0 10px 10px 0;
+}
+
+.right {
+  float: right;
+}
+
+.card {
+  border: solid 0.02rem rgba($black, 0.1);
+  margin: 20px 0;
+  box-shadow: 0 2px 5px rgba($black, 0.05);
+}
