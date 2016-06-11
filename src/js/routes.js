@@ -17,7 +17,7 @@ const createStoreWithMiddleware = applyMiddleware()(createStore);
 
 var Routes = (
   <Provider store={createStoreWithMiddleware(reducers)}>
-    <Router history={hashHistory} >
+    <Router history={browserHistory} >
       <Route path="/" component={App}>
         <IndexRoute component={Setup} />
         <Route path="profile" component={Profile} />

@@ -22,7 +22,7 @@ export default class MainMenu extends Component {
               <Link to="/profile"> Import</Link>
             </li>
             <li class="">
-              <Link to="/tutorials"> Organize</Link>
+              <Link to="/"> Organize</Link>
             </li>
             <li class="">
               <Link to="/"> Interact</Link>

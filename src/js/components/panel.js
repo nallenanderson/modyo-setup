@@ -15,9 +15,9 @@ class Panel extends Component {
       return(
         <li key={i} onClick={this.handleUpdate.bind(this, i)}>
           <span className="links">
-            <a>
+            <Link to={`${task.link}`}>
               <i className={task.status == 'complete' ? "ion-android-checkbox-outline" : "ion-android-checkbox-outline-blank"}></i> {task.desc}
-            </a>
+            </Link>
           </span>
         </li>
       );

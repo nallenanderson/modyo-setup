@@ -2,12 +2,6 @@ import React, { Component } from 'react';
 
 export default class ReplyBox extends Component {
 
-  constructor(){
-    super();
-
-
-  }
-
   closeBox(e){
     e.preventDefault();
     this.props.handleClose();

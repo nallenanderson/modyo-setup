@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 
+import * as actions from '../../actions';
 import ReplyBox from './reply-box';
 
-export default class Activity extends Component {
+class Activity extends Component {
 
   constructor(){
     super();
@@ -11,7 +13,7 @@ export default class Activity extends Component {
 
     this.state = {
       showReply: false,
-      replies: []
+      updated: false
     }
 
   }
@@ -22,7 +24,8 @@ export default class Activity extends Component {
 
   formSubmit(reply){
     this.allReplies.push(reply);
-    this.setState({ replies: this.allReplies });
+    this.props.addReplies(this.allReplies);
+    this.setState({ updated: true });
   }
 
   render(){
@@ -40,7 +43,7 @@ export default class Activity extends Component {
             <ReplyBox
              handleClose={() => this.setState({ showReply: false })}
              formSubmit={this.formSubmit.bind(this)}
-             replies={this.state.replies}
+             replies={this.props.replies}
              /> :
              ''
            }
@@ -61,3 +64,9 @@ export default class Activity extends Component {
     );
   }
 }
+
+function mapStateToProps(state){
+  return { replies: state.replies };
+}
+
+export default connect(mapStateToProps, actions)(Activity);
