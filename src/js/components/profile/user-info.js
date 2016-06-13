@@ -1,33 +1,31 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 
-import { tags, targets, details } from '../../data';
+import { availableTags, targets, details } from '../../data';
+import * as actions from '../../actions';
+import TagModal from '../tag-modal';
 
-export default class UserInfo extends Component {
-
-  constructor(){
-    super();
-    this.state = {
-      tags: []
-    };
-  }
+class UserInfo extends Component {
 
   handleDelete(tag){
-    console.log(tag)
     if(confirm("Are you sure you want to remove this tag?")){
-      delete this.state.tags[tag];
-      this.setState({
-        tags: this.state.tags
-      });
+      var newTags = this.props.tags;
+      newTags.splice(tag, 1);
+      this.props.deleteTags(newTags);
     }
+    this.forceUpdate();
   }
 
-  componentWillMount(){
-    this.setState({ tags });
+  addTag(tag){
+    const newTags = this.props.tags;
+    newTags.push(tag);
+    this.props.addTags(newTags);
+    availableTags.splice(tag, 1);
+    this.forceUpdate();
   }
 
   render(){
-
-    const userTags = this.state.tags.map((tag, i) => {
+    const userTags = this.props.tags.map((tag, i) => {
       return(
         <li key={i} className="label">
           <i className="ion-pricetags"></i> {tag} <i onClick={this.handleDelete.bind(this, i)} className="ion-close-circled"></i>
@@ -57,7 +55,7 @@ export default class UserInfo extends Component {
       <div className="user-details padding-all">
         <h4>Tags</h4>
         <ul className="user-targets">
-          <li className="label green"><i className="ion-plus-round"></i> Add Tag</li>
+          <li className="label" data-toggle="modal" data-target="#tagModal"><i className="ion-plus-round"></i> Add Tag</li>
           { userTags }
         </ul>
         <div className="clear"></div>
@@ -66,8 +64,9 @@ export default class UserInfo extends Component {
         <ul className="user-targets">
           { userTargets }
         </ul>
-        <div className="clear"></div>
 
+        <TagModal tags={this.props.tags} addTag={this.addTag.bind(this)} availableTags={availableTags} />
+        <div className="clear"></div>
 
         <h4>User Details</h4>
         <dl>
@@ -77,3 +76,9 @@ export default class UserInfo extends Component {
     );
   }
 }
+
+function mapStateToProps(state) {
+  return { tags: state.tags }
+}
+
+export default connect(mapStateToProps, actions)(UserInfo);

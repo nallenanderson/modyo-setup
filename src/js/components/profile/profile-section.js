@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 
+import EmailModal from './email-modal';
+
 export default class ProfileSection extends Component {
+
   render() {
     return (
       <div id="profile" className="padding-all">
@@ -11,7 +14,7 @@ export default class ProfileSection extends Component {
             <label className="tag">Teammate</label>
             <a>nate@modyo.com</a>
             <p>Last activity 7 minutes ago.</p>
-            <button href="#" className="big-button">
+            <button href="#" className="big-button" data-toggle="modal" data-target="#emailModal">
               <i className="ion-ios-email-outline"></i> Message
             </button>
             <button href="#" className="big-button">
@@ -19,6 +22,9 @@ export default class ProfileSection extends Component {
             </button>
           </div>
         </div>
+
+        <EmailModal updateActivities={this.props.updateActivities} />
+
       </div>
     );
   }

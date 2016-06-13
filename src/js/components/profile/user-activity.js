@@ -4,10 +4,6 @@ import ActivityCard from './activity-card';
 
 export default class UserActivity extends Component {
 
-  constructor(){
-    super();
-  }
-
   render(){
     return(
       <div className="user-activity padding-all">
@@ -23,7 +19,7 @@ export default class UserActivity extends Component {
           </button>
         </div>
         <div className="clear"></div>
-        <ActivityCard />
+        <ActivityCard activities={this.props.activities} />
       </div>
     );
   }

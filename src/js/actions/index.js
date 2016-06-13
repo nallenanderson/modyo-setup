@@ -1,4 +1,4 @@
-import { UPDATE_TASKS, ADD_REPLIES } from './types';
+import { UPDATE_TASKS, ADD_REPLIES, ADD_TAGS, DELETE_TAGS, ADD_ACTIVITY } from './types';
 
 export function updateTasks(taskUpdated){
   return {
@@ -13,3 +13,24 @@ export function addReplies(reply){
     payload: reply
   }
 };
+
+export function addTags(tags){
+  return {
+    type: ADD_TAGS,
+    payload: tags
+  }
+}
+
+export function deleteTags(tags){
+  return {
+    type: DELETE_TAGS,
+    payload: tags
+  }
+}
+
+export function addActivity(activities){
+  return {
+    type: ADD_ACTIVITY,
+    payload: activities
+  }
+}

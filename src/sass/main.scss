@@ -39,6 +39,20 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 400;
 }
 
+h2 {
+  font-size: 25px;
+  margin: inherit;
+}
+
+h4 {
+  font-size: inherit;
+  margin: inherit;
+}
+
+p {
+  font-size: inherit;
+}
+
 a {
   text-decoration: none;
   color: $green;
@@ -79,6 +93,9 @@ a {
   &:hover {
     background: darken($white, 3%);
   }
+  &:focus, &:visited {
+    background: $white;
+  }
 }
 
 .label {
@@ -99,4 +116,56 @@ a {
   border: solid 0.02rem rgba($black, 0.1);
   margin: 20px 0;
   box-shadow: 0 2px 5px rgba($black, 0.05);
+}
+
+.list-group {
+  margin-top: 15px;
+}
+
+.list-group-item:first-child {
+  border-top-right-radius: 0;
+  border-top-left-radius: 0;
+}
+
+.list-group-item:last-child {
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.second {
+  border-top: 1px solid #e5e5e5;
+}
+
+.modal-body .user-targets li.label {
+  margin-bottom: 0;
+}
+
+.inline-input {
+  border: none;
+  &:focus {
+    outline: none;
+  }
+}
+
+.btn {
+  margin-left: 0!important;
+}
+
+.input-field {
+  margin-bottom: 1rem;
+}
+
+.white-button {
+  background: #fcfcfc;
+  color: #131313;
+  border: 1px solid rgba(19,19,19,.2);
+  margin-left: 8px;
+  padding: 8px 12px;
+  font-size: 14px;
+  float: right;
+  margin-top: 8px;
+  transition: .2s ease-in-out;
+  &:hover {
+    background: #f2f2f2;
+  }
 }

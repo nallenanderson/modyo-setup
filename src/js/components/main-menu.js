@@ -19,7 +19,7 @@ export default class MainMenu extends Component {
           </div>
           <ul className="mm-listview">
             <li className="mm-selected">
-              <Link to="/profile"> Import</Link>
+              <Link to="/import"> Import</Link>
             </li>
             <li class="">
               <Link to="/"> Organize</Link>

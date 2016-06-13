@@ -90,7 +90,9 @@ export const taskData = [
   }
 ];
 
-export const tags = ['Male', 'Over 30', 'Gringo', 'Pet Lover'];
+export const tagData = ['Male', 'Over 30', 'Gringo', 'Pet Lover'];
+
+export const availableTags = ['Modyo', 'New Customer', '+1 Purchases', 'VIP'];
 
 export const targets = ['Active!', 'Chile-based', 'Product'];
 

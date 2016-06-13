@@ -7,14 +7,14 @@ import Panel from './panel';
 
 class ContentWrapper extends Component {
 
-  updateStatus(taskIndex, desc, id){
+  updateStatus(taskIndex, desc, id, link){
     let newState = this.props.tasks;
 
     let updatedState = update(newState,
       { [taskIndex] :
         { tasks :
           { [id] :
-            { $set: { desc, status: 'complete' }}
+            { $set: { desc, status: 'complete', link }}
           }
         }
       }

@@ -28,7 +28,7 @@ export default class ReplyBox extends Component {
               </span>
               <span className="date">1 minute ago</span>
             </div>
-            <div className="activity-detail blue">
+            <div className="activity-detail blue-border">
               {reply}
             </div>
           </div>
@@ -41,7 +41,7 @@ export default class ReplyBox extends Component {
         {reply}
         <form ref="commentForm" className="reply-box" onSubmit={this.handleSubmit.bind(this)}>
           <textarea placeholder="Please enter your reply..." ref="reply" />
-          <button className="close" onClick={this.closeBox.bind(this)}>Close</button>
+          <button className="white" onClick={this.closeBox.bind(this)}>Close</button>
           <button className="" type="submit">Reply</button>
           <div className="clear"></div>
         </form>

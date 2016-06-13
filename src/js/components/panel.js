@@ -5,7 +5,7 @@ class Panel extends Component {
 
   handleUpdate(i){
     if(this.props.tasks[i].status === 'incomplete'){
-      this.props.updateStatus(this.props.taskIndex, this.props.tasks[i].desc, i);
+      this.props.updateStatus(this.props.taskIndex, this.props.tasks[i].desc, i, this.props.tasks[i].link);
     }
   }
 
@@ -35,7 +35,7 @@ class Panel extends Component {
 
     return (
       <div className="ibox-panel">
-        <label className={completedTasks === totalTasks ? "progress green": "progress"}>{ completedTasks } / { totalTasks }</label>
+        <label className={completedTasks === totalTasks ? "progress-label green": "progress-label"}>{ completedTasks } / { totalTasks }</label>
         <h2>{this.props.name}</h2>
         <ul className="setup-list">
           { listTasks }
