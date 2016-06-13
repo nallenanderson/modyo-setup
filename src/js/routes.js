@@ -7,6 +7,7 @@ import App from './components/app';
 import Setup from './components/setup';
 import Profile from './components/profile';
 import Tutorials from './components/tutorials';
+import Custom from './components/custom';
 import Teams from './components/teams';
 import Channels from './components/channels';
 import Import from './components/import';
@@ -22,6 +23,7 @@ var Routes = (
         <IndexRoute component={Setup} />
         <Route path="profile" component={Profile} />
         <Route path="tutorials" component={Tutorials} />
+        <Route path="custom" component={Custom} />
         <Route path="teams" component={Teams} />
         <Route path="channels" component={Channels} />
         <Route path="import" component={Import} />

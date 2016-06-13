@@ -2,22 +2,27 @@ import React, { Component } from 'react';
 
 import MainMenu from '../main-menu';
 import Content from '../content';
+import ImportInfo from './import-info';
 
 export default class Import extends Component {
 
   constructor(){
     super();
     this.state = {
-      divToShow: null
+      divToShow: null,
+      hideFirst: null
     }
   }
 
-  showCSV(){
-    console.log("CSV");
+  importCSV(){
+    console.log("Hi CSV");
+    this.setState({ divToShow: null, hideFirst: true })
   }
 
-  showList(){
-    console.log("Hi");
+  importList(e){
+    e.preventDefault();
+    this.setState({ divToShow: null, hideFirst: true })
+    console.log("Hi List");
   }
   render(){
 
@@ -36,7 +41,7 @@ export default class Import extends Component {
           </div>
 
           <p>Your CSV file must constain at least a first name and email address. You can also map your custom created fields to columns in your CSV file.</p>
-          <button className="btn btn-primary">Import</button>
+          <button className="btn btn-primary" onClick={this.importCSV.bind(this)}>Import</button>
         </div>
       </div>;
     } else if (this.state.divToShow === 'list'){
@@ -45,8 +50,16 @@ export default class Import extends Component {
         <form className="form-box">
           <textarea placeholder="Paste list here with each record on its own line." />
           <p>Each record must constain at least a first name and email address. You can also map your custom created fields to columns in your CSV file.</p>
-          <button className="btn btn-primary">Import</button>
+          <button className="btn btn-primary" onClick={this.importList.bind(this)}>Import</button>
         </form>
+      </div>
+    }
+
+    let showResults;
+
+    if(this.state.hideFirst){
+      showResults = <div className="default-box padding-all">
+        <ImportInfo />
       </div>
     }
 
@@ -61,7 +74,7 @@ export default class Import extends Component {
           </div>
           <div id="content-wrapper">
             <div id="content" className="padding-all">
-              <div className="default-box">
+              <div className={!this.state.hideFirst ? "default-box" : "hidden"} >
                 <div className="padding-all">
                   <div className="row">
                     <div className="col-md-6">
@@ -84,6 +97,7 @@ export default class Import extends Component {
                 </div>
               </div>
               {showDiv}
+              {showResults}
             </div>
           </div>
         </div>

@@ -2,9 +2,36 @@ import React, { Component } from 'react';
 
 import MainMenu from '../main-menu';
 import Content from '../content';
+import Channel from './channel';
+import { channels } from '../../data';
 
 export default class Channels extends Component {
+
+  constructor(){
+    super();
+    this.state = {
+      channel: null
+    }
+  }
+
+  setChannel(){
+    this.setState({ });
+  }
+
   render(){
+
+    let channelDiv;
+
+    const channelList = channels.map((channel, i) => {
+      return <a className="list-group-item" key={i} onClick={() => this.setState({ channel: channel })}>{channel.title} <label className="badge">{channel.people}</label></a>
+    });
+
+    if(!this.state.channel){
+      channelDiv = <p className="lead">Use channels to connect your customers with your team. You can assign your teammates to various channels so that they can respond to the people that need them most.</p>;
+    } else {
+      channelDiv = <Channel channel={this.state.channel} />
+    }
+
     return(
       <div>
         <MainMenu />
@@ -15,11 +42,19 @@ export default class Channels extends Component {
             </div>
           </div>
           <div id="content-wrapper">
-            <div id="profile" className="padding-all">
-              <div className="default-box">
+            <div id="content" className="padding-all">
+              <div className="default-box col-md-3">
+                <div className="channel-box">
+                  <h4>Channels</h4>
+                  <ul className="list-group">
+                    {channelList}
+                  </ul>
+                  <button className="btn btn-default channel-button"><i className="ion-plus-round"></i> New Channel</button>
+                </div>
+              </div>
+              <div className="default-box col-md-9">
                 <div className="padding-all">
-                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                  <div className="clear"></div>
+                  {channelDiv}
                 </div>
               </div>
             </div>

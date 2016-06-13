@@ -6,6 +6,8 @@ Import all modularized SCSS files first.
 @import '_menu';
 @import '_page_context';
 @import '_profile';
+@import '_import';
+@import '_teams';
 
 
 /***************************************************************************************
@@ -142,6 +144,7 @@ a {
 
 .inline-input {
   border: none;
+  width: 100%;
   &:focus {
     outline: none;
   }
@@ -165,7 +168,88 @@ a {
   float: right;
   margin-top: 8px;
   transition: .2s ease-in-out;
-  &:hover {
+  &:hover, &:focus {
     background: #f2f2f2;
   }
+  &.green {
+    color: $green;
+    border: 1px solid $green;
+    &:hover, &:focus {
+      background: darken($green, 3%);
+    }
+  }
+}
+
+.channel-button {
+  width: 100%;
+  
+}
+
+.table {
+  thead th {
+    vertical-align: bottom;
+    border-bottom: 2px solid #eceeef;
+  }
+  .thead-default th {
+    color: #55595c;
+    background-color: #eceeef;
+  }
+  th {
+    padding: .75rem;
+    line-height: 1.5;
+    vertical-align: top;
+    border-top: 1px solid #eceeef;
+  }
+}
+
+.transparent {
+  color: transparent;
+}
+
+.checker {
+  z-index: 9999;
+}
+
+.lefty {
+  float: left;
+}
+
+.righty {
+  float: right;
+  &.custom {
+    margin-top: -75px;
+  }
+}
+
+.custom-fields-image {
+  width: 100%;
+}
+
+#footer {
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  height: 60px;
+  background-color: rgb(255, 255, 255);
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 0px 1px 1px;
+  padding: 10px 20px;
+  .btn {
+    margin-top: 0;
+  }
+}
+
+.border-right {
+  border-right: 1px solid #eceeef;
+}
+
+.input-field label {
+  left: 0;
+}
+
+/***************************************************************************************
+THIS IS FOR THE CHANNELS
+***************************************************************************************/
+.channel-box {
+  padding: 15px 0;
 }

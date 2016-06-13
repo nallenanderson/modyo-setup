@@ -10,13 +10,13 @@ export const taskData = [
       },
       {
         desc: 'Complete Profile',
-        status: 'incomplete',
-        link: '/profile'
+        status: 'complete',
+        link: '/'
       },
       {
         desc: 'View Tutorials',
-        status: 'incomplete',
-        link: '/tutorials'
+        status: 'complete',
+        link: '/'
       }
     ]
   },
@@ -26,8 +26,8 @@ export const taskData = [
     tasks: [
       {
         desc: 'Create Customer Profiles',
-        status: 'complete',
-        link: '/profile'
+        status: 'incomplete',
+        link: '/custom'
       },
       {
         desc: 'Create Team Members and Roles',
@@ -48,7 +48,7 @@ export const taskData = [
   },
   {
     id: 3,
-    name: 'Analyze',
+    name: 'Organize and Analyze',
     tasks: [
       {
         desc: 'Assign Team Members to Channels',
@@ -73,7 +73,7 @@ export const taskData = [
     tasks: [
       {
         desc: 'Set Up Marketing Automation',
-        status: 'complete',
+        status: 'incomplete',
         link: '/automation'
       },
       {
@@ -84,7 +84,7 @@ export const taskData = [
       {
         desc: 'Send Single Customer Message',
         status: 'incomplete',
-        link: '/contact'
+        link: '/profile'
       }
     ]
   }
@@ -178,5 +178,84 @@ export const notes = [
     date: "31 May 2016",
     avatar: "https://static.intercomassets.com/avatars/478313/square_128/nate-1463665377.jpg?1463665377",
     message: "This guys is on fire..."
+  }
+];
+
+export const importedUsers = [
+  {
+    first: "Nate",
+    last: "Anderson",
+    email: "nate@modyo.com",
+    title: "Product Manager"
+  },
+  {
+    first: "Mark",
+    last: "Bonnell",
+    email: "mark@modyo.com",
+    title: "CEO"
+  },
+  {
+    first: "José Antonio",
+    last: "Silva",
+    email: "jsilva@modyo.com",
+    title: "CTO"
+  },
+  {
+    first: "Luis",
+    last: "Nazarit",
+    email: "luis@modyo.com",
+    title: "Lead Designer"
+  },
+  {
+    first: "Wesley",
+    last: "Campbell",
+    email: "wesley@modyo.com",
+    title: "Marketing King"
+  }
+];
+
+export const comunas = [
+	{ label: 'La Florida', value: 'la_florida' },
+	{ label: 'La Reina', value: 'la_reina' },
+	{ label: 'Las Condes', value: 'las_condes' },
+	{ label: 'Ñuñoa', value: 'nunoa' },
+	{ label: 'Providencia', value: 'providencia' },
+	{ label: 'Quilicura', value: 'quilicura' },
+	{ label: 'San Miguel', value: 'san_miguel' },
+	{ label: 'Vitacura', value: 'vitacura' }
+];
+
+export const roles = [
+  { label: 'Content Creator', value: 'cc' },
+  { label: 'Content Reviewer/Publisher', value: 'crp' },
+  { label: 'Customer Service Agent', value: 'csa' },
+  { label: 'General Admin', value: 'ga' }
+];
+
+export const channels = [
+  {
+    label: 'mkt',
+    title: 'Marketing',
+    people: '3'
+  },
+  {
+    label: 'sls',
+    title: 'Sales',
+    people: '4'
+  },
+  {
+    label: 'cs',
+    title: 'Customer Service',
+    people: '1'
+  },
+  {
+    label: 'pd',
+    title: 'Product Development',
+    people: '-'
+  },
+  {
+    label: 'cd',
+    title: 'Custom Development',
+    people: '6'
   }
 ];
