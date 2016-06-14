@@ -182,7 +182,7 @@ a {
 
 .channel-button {
   width: 100%;
-  
+
 }
 
 .table {
@@ -252,4 +252,35 @@ THIS IS FOR THE CHANNELS
 ***************************************************************************************/
 .channel-box {
   padding: 15px 0;
+}
+
+.channel {
+  h3 {
+    margin-top: 0;
+    font-size: 1.4rem;
+    margin-bottom: 8px;
+    .btn.btn-white {
+      margin: 0;
+      padding: 4px 12px;
+      position: relative;
+      top: -8px;
+      color: $black;
+      background: $white;
+      &:hover, &:hover {
+        background: darken($white, 4%) !important;
+      }
+    }
+  }
+}
+
+#channelModal {
+  .list-group {
+    max-height: 166px;
+    overflow-y: scroll;
+  }
+  .add-tag {
+    position: relative;
+    padding: 20px 0 0;
+    top: -15px;
+  }
 }

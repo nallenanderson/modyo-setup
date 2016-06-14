@@ -17,7 +17,7 @@ export default class Channel extends Component {
     });
     return(
       <div className="channel">
-        <h3>{this.props.channel.title} <button className="big-button pull-right"><i className="ion-gear-b"></i></button></h3>
+        <h3>{this.props.channel.title} <button className="btn btn-primary btn-white pull-right"><i className="ion-gear-b"></i></button></h3>
           <table className="table">
             <thead className="thead-default">
               <tr>

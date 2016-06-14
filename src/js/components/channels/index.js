@@ -1,28 +1,26 @@
 import React, { Component } from 'react';
 
 import MainMenu from '../main-menu';
-import Content from '../content';
 import Channel from './channel';
-import { channels } from '../../data';
+import ChannelModal from './channel-modal';
+import { channels, comunas, importedUsers } from '../../data';
 
 export default class Channels extends Component {
 
-  constructor(){
-    super();
+  constructor(props){
+    super(props);
     this.state = {
       channel: null
     }
-  }
 
-  setChannel(){
-    this.setState({ });
+    this.channels = channels;
   }
 
   render(){
 
     let channelDiv;
 
-    const channelList = channels.map((channel, i) => {
+    const channelList = this.channels.map((channel, i) => {
       return <a className="list-group-item" key={i} onClick={() => this.setState({ channel: channel })}>{channel.title} <label className="badge">{channel.people}</label></a>
     });
 
@@ -49,7 +47,7 @@ export default class Channels extends Component {
                   <ul className="list-group">
                     {channelList}
                   </ul>
-                  <button className="btn btn-default channel-button"><i className="ion-plus-round"></i> New Channel</button>
+                  <button className="btn btn-default channel-button" data-toggle="modal" data-target="#channelModal"><i className="ion-plus-round"></i> New Channel</button>
                 </div>
               </div>
               <div className="default-box col-md-9">
@@ -57,6 +55,7 @@ export default class Channels extends Component {
                   {channelDiv}
                 </div>
               </div>
+              <ChannelModal />
             </div>
           </div>
         </div>

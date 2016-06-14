@@ -69,7 +69,7 @@ class ContentWrapper extends Component {
           <div className="default-box">
             <div className="padding-all">
               <div className="ibox-panel ibox-nav">
-                <h2>Your Progress</h2>
+                <h2>Setup Progress</h2>
                 <div className="progressive">
                   {progressBar}
                 </div>
