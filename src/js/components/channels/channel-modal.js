@@ -25,8 +25,7 @@ export default class ChannelModal extends Component {
   addTeammate(first, last){
     const person = first + " " + last;
     this.state.people.push(person);
-    this.setState({ people: this.state.people })
-    console.log("Team, ", this.state.people );
+    this.setState({ people: this.state.people });
   }
 
   render(){

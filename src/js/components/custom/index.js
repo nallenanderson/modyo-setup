@@ -2,8 +2,18 @@ import React, { Component } from 'react';
 import { Link } from 'react-router';
 
 import MainMenu from '../main-menu';
+import CustomTable from './custom-table';
+import SignUp from './sign-up';
 
 export default class Custom extends Component {
+
+  constructor(props){
+    super(props);
+    this.state = {
+      showSign: true
+    }
+  }
+
   render(){
     return(
       <div>
@@ -14,12 +24,29 @@ export default class Custom extends Component {
               <h1>Custom Fields</h1>
             </div>
           </div>
+
           <div id="content-wrapper">
             <div id="content" className="padding-all">
-              <img src="https://cloud.modyocdn.com/uploads/5dbdf920319811e6880b7b0c4cc8460b/original/Screen_Shot_2016-06-13_at_2_56_44_PM.jpg" className="custom-fields-image" />
-              <Link to="/">
-                <button className="btn btn-default righty custom">Finish</button>
-              </Link>
+              <div className="default-box col-md-3">
+                <div className="channel-box">
+                  <ul className="list-group">
+                    <a className={this.state.showSign ? "list-group-item chill active custom" : "list-group-item chill"} onClick={() => this.setState({ showSign: true })}>Sign Up</a>
+                    <a className={!this.state.showSign ? "list-group-item chill active custom" : "list-group-item chill"} onClick={() => this.setState({ showSign: false })}>Custom Fields</a>
+                  </ul>
+                </div>
+              </div>
+              <div className="default-box col-md-9 full-action">
+                <div className="padding-all">
+                  {this.state.showSign ? <SignUp /> : <CustomTable />}
+                </div>
+              </div>
+              <div id="footer">
+                <Link to="/">
+                  <button className="btn btn-default pull-right">
+                    Save
+                  </button>
+                </Link>
+              </div>
             </div>
           </div>
         </div>

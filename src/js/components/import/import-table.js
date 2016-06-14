@@ -65,11 +65,8 @@ class ImportTable extends Component {
             {userList}
           </tbody>
         </table>
-        <button className="white-button lefty" data-toggle="modal" data-target="#tagModal">Tag Users</button>
+        <button className="btn btn-primary" data-toggle="modal" data-target="#tagModal">Tag Users</button>
         <TagUsers availableTags={tagList} tags={this.userTags} addTag={this.addTag.bind(this)} />
-        <Link to="/">
-          <button className="btn btn-default righty">Finish</button>
-        </Link>
         <div className="clear"></div>
       </div>
     );

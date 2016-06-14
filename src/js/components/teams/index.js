@@ -44,7 +44,7 @@ export default class Teams extends Component {
           </div>
           <div id="content-wrapper">
             <div id="content" className="padding-all">
-              <div className="default-box">
+              <div className="default-box full-actions">
                 <div className="row">
                   <div className="col-md-7 border-right">
                     <div className="padding-all now">
@@ -76,15 +76,16 @@ export default class Teams extends Component {
                         <input className="form-control" type="password" id="passwordConf" />
                         <label htmlFor="passwordConf">Confirm password</label>
                       </div>
+                      <div className="input-field">
+                        <input type="checkbox" checked={this.state.email}/>
+                        <label onClick={this.setEmail.bind(this)}>Send activation email and password</label>
+                      </div>
                     </div>
 
                   </div>
                   <div className="col-md-5">
                     <div className="padding-all">
-                      <div className="input-field">
-                        <input type="checkbox" checked={this.state.email}/>
-                        <label onClick={this.setEmail.bind(this)}>Send activation email and password</label>
-                      </div>
+                      <p className="lead">Admin options</p>
                       <div className="selectors">
                         <div className="input-field">
                           <input type="checkbox" checked={this.state.admin}/>

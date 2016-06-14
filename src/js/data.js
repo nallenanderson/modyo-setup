@@ -53,12 +53,12 @@ export const taskData = [
       {
         desc: 'Assign Team Members to Channels',
         status: 'incomplete',
-        link: '/assign-team'
+        link: '/channels'
       },
       {
         desc: 'Tag Users',
         status: 'incomplete',
-        link: '/tags'
+        link: '/users'
       },
       {
         desc: 'Create Targets',
@@ -234,28 +234,130 @@ export const roles = [
 
 export const channels = [
   {
+    id: 0,
     label: 'mkt',
     title: 'Marketing',
-    people: '3'
+    people: [
+      {
+        first: "José Antonio",
+        last: "Silva",
+        email: "jsilva@modyo.com",
+        title: "CTO"
+      },
+      {
+        first: "Luis",
+        last: "Nazarit",
+        email: "luis@modyo.com",
+        title: "Lead Designer"
+      },
+      {
+        first: "Wesley",
+        last: "Campbell",
+        email: "wesley@modyo.com",
+        title: "Marketing King"
+      }
+    ]
   },
   {
+    id: 1,
     label: 'sls',
     title: 'Sales',
-    people: '4'
+    people: [
+      {
+        first: "Nate",
+        last: "Anderson",
+        email: "nate@modyo.com",
+        title: "Product Manager"
+      },
+      {
+        first: "Mark",
+        last: "Bonnell",
+        email: "mark@modyo.com",
+        title: "CEO"
+      }
+    ]
   },
   {
+    id: 2,
     label: 'cs',
     title: 'Customer Service',
-    people: '1'
+    people: [
+      {
+        first: "Maida",
+        last: "Godoy",
+        email: "mgodoy@modyo.com",
+        title: "Customer Specialist"
+      }
+    ]
   },
   {
+    id: 3,
     label: 'pd',
     title: 'Product Development',
-    people: '-'
+    people: []
   },
   {
+    id: 4,
     label: 'cd',
     title: 'Custom Development',
-    people: '6'
+    people: [
+      {
+        first: "Abel",
+        last: "Carvajal",
+        email: "abel@modyo.com",
+        title: "Lead Engineer"
+      },
+      {
+        first: "Ivan",
+        last: "Gonzalez",
+        email: "ivan@modyo.com",
+        title: "Sr. Engineer"
+      },
+      {
+        first: "Cristián",
+        last: "Yuseff",
+        email: "cyuseff@modyo.com",
+        title: "Sr. Front End"
+      },
+      {
+        first: "Marcelo",
+        last: "Zuñiga",
+        email: "marcelo@modyo.com",
+        title: "Sr. Rails Engineer"
+      },
+      {
+        first: "Roberto",
+        last: "Rivera",
+        email: "rrivera@modyo.com",
+        title: "Front End Guru"
+      }
+    ]
+  }
+];
+
+export const customFields = [
+  {
+    title: 'RUT',
+    desc: 'Enter your RUT number',
+    type: 'Single line text',
+    status: 'Active'
+  },
+  {
+    title: 'Job Title',
+    desc: 'Select your job title',
+    type: 'Dropdown',
+    status: 'Active'
+  },
+  {
+    title: 'Employment Date',
+    desc: 'Enter the date that you started working here.',
+    type: 'Date',
+    status: 'Inactive'
+  },
+  {
+    title: 'City',
+    desc: 'Enter your city.',
+    type: 'Single line text',
+    status: 'Active'
   }
 ];

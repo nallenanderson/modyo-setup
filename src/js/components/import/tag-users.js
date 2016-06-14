@@ -47,7 +47,7 @@ export default class TagUsers extends Component {
               <div className="list-group">
                 { myTags }
               </div>
-              <button className="white-button" data-dismiss="modal" style={{ marginBottom: 20 }}>Close</button>
+              <button className="btn btn-default pull-right" data-dismiss="modal">Close</button>
             </div>
             <div className="clear"></div>
           </div>
