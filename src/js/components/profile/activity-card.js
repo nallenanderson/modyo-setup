@@ -1,10 +1,7 @@
-import React, { Component } from 'react';
-
+import React from 'react';
 import Activity from './activity';
 
-export default class ActivityCard extends Component {
-
-  render(){
+const ActivityCard = () => {
 
     const showActivities = this.props.activities.map( (activity, i) => {
       return <Activity key={i} activity={activity} />
@@ -14,5 +11,6 @@ export default class ActivityCard extends Component {
       <div>{showActivities}</div>
     )
 
-  }
 }
+
+export default ActivityCard;

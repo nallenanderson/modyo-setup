@@ -1,19 +1,9 @@
-import React, { Component } from 'react';
-import { connect } from 'react-redux';
-import * as actions from '../../actions';
+import React from 'react';
 
 import Content from '../content';
 
-export default class Setup extends Component {
-
-  render(){
-    return <Content />
-  }
-
+const Setup = () => {
+  return <Content />
 }
 
-// function mapStateToProps(state){
-//   return { tasks: state.tasks }
-// }
-//
-// export default connect(mapStateToProps)(Setup);
+export default Setup;
