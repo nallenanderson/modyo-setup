@@ -4,8 +4,8 @@
   position: relative;
   .profile-box {
     position: absolute;
-    bottom: 10px;
-    left: 10px;
+    padding: 5px 15px !important;
+    top: 5px;
     .avatar {
       border-radius: 8px;
       height: 160px;
@@ -40,11 +40,12 @@
 }
 
 .user-details, .user-activity {
-  width: calc(35% - 20px);
+  width: calc(35% - 40px);
   float: left;
-  margin: 20px 10px;
+  margin: 20px 10px 20px 30px;
   background: $white;
   h4 {
+    margin-left: 0;
     font-weight: 500;
     padding-bottom: 8px;
     margin-bottom: 8px;
@@ -61,7 +62,8 @@
 }
 
 .user-activity {
-  width: calc(65% - 20px);
+  width: calc(65% - 40px);
+  margin: 20px 30px 20px 10px;
   a {
     color: inherit;
     display: inline-block;

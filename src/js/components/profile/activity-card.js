@@ -1,9 +1,9 @@
 import React from 'react';
 import Activity from './activity';
 
-const ActivityCard = () => {
+const ActivityCard = (props) => {
 
-    const showActivities = this.props.activities.map( (activity, i) => {
+    const showActivities = props.activities.map( (activity, i) => {
       return <Activity key={i} activity={activity} />
     });
 

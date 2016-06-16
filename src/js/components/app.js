@@ -7,11 +7,24 @@ import { taskData } from '../data';
 
 class App extends Component {
 
+  constructor(props){
+    super(props);
+    this.state = {
+      showMenu: false
+    }
+  }
+
+  openMenu(){
+    console.log("Hello there...");
+    this.setState({ showMenu: !this.state.showMenu });
+  }
+
   render(){
+
     return(
       <div>
-        <MainMenu title="Modyo" />
-        {this.props.children}
+        <MainMenu title="Modyo" showMenu={this.state.showMenu} />
+        {React.cloneElement(this.props.children, { openMenu: this.openMenu.bind(this), showMenu: this.state.showMenu })}
       </div>
     );
   }

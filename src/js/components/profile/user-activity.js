@@ -2,7 +2,7 @@ import React from 'react';
 
 import ActivityCard from './activity-card';
 
-const UserActivity = () => {
+const UserActivity = (props) => {
   return(
     <div className="user-activity padding-all">
       <h4>
@@ -17,7 +17,7 @@ const UserActivity = () => {
         </button>
       </div>
       <div className="clear"></div>
-      <ActivityCard activities={this.props.activities} />
+      <ActivityCard activities={props.activities} />
     </div>
   );
 }

@@ -53,14 +53,10 @@
   .ibox-panel {
     margin: 15px;
     border: solid 1px #eee;
-    width: calc(60% - 15px);
     padding: 8px 15px;
     position: relative;
-    &.ibox-nav {
-      position: fixed;
-      top: 90px;
-      right: 15px;
-      width: calc(30% - 15px);
+    h2 {
+      margin-left: 0;
     }
     .links a {
       color: $black;

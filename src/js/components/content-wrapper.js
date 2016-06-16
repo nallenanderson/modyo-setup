@@ -68,15 +68,19 @@ class ContentWrapper extends Component {
         <div id="content" className="padding-all">
           <div className="default-box">
             <div className="padding-all">
-              <div className="ibox-panel ibox-nav">
-                <h2>Setup Progress</h2>
-                <div className="progressive">
-                  {progressBar}
+              <div className="col-md-push-7 col-md-5">
+                <div className="ibox-panel col-md-12">
+                  <h2>Setup Progress</h2>
+                  <div className="progressive">
+                    {progressBar}
+                  </div>
+                  <span className="amount-complete">{percentage}% Complete</span>
+                  <p className={percentage === 100 ? 'congrats' : 'hidden'}>Way to go! You are a certified Modyo pro! Now, go great awesome digital experiences!</p>
                 </div>
-                <span className="amount-complete">{percentage}% Complete</span>
-                <p className={percentage === 100 ? 'congrats' : 'hidden'}>Way to go! You are a certified Modyo pro! Now, go great awesome digital experiences!</p>
               </div>
-              { tasks }
+              <div className="col-md-7 col-md-pull-5">
+                { tasks }
+              </div>
               <div className="clear"></div>
             </div>
           </div>

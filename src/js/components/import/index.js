@@ -67,11 +67,17 @@ export default class Import extends Component {
 
     return(
       <div>
-        <MainMenu />
-        <div id="main">
+        <div id="main" className={!this.props.showMenu ? "" : "showMenu"}>
           <div id="page-context">
             <div id="page-context-header">
-              <h1>Import</h1>
+              <h1>
+                <button className="outer" onClick={this.props.openMenu} >
+                  <span id="nav-toggle" className={!this.props.showMenu ? "" : "active"}>
+                    <span></span>
+                  </span>
+                </button>
+                Import
+              </h1>
             </div>
           </div>
           <div id="content-wrapper">

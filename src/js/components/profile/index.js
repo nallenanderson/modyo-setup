@@ -18,10 +18,17 @@ class Profile extends Component {
   render(){
     return(
       <div>
-        <div id="main">
+        <div id="main" className={!this.props.showMenu ? "" : "showMenu"}>
           <div id="page-context">
             <div id="page-context-header">
-              <h1>Profile</h1>
+              <h1>
+                <button className="outer" onClick={this.props.openMenu} >
+                  <span id="nav-toggle" className={!this.props.showMenu ? "" : "active"}>
+                    <span></span>
+                  </span>
+                </button>
+                Profile
+              </h1>
             </div>
           </div>
           <div id="content-wrapper">

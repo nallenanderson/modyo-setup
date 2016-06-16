@@ -4,7 +4,7 @@ import { Link } from 'react-router';
 export default class MainMenu extends Component {
   render(){
     return(
-      <div id="main-menu">
+      <div id="main-menu" className={this.props.showMenu ? "showMenu" : ""}>
         <div className="nav-brand"></div>
         <div class="nav-account">
           <div className="account-dropdown dropdown">

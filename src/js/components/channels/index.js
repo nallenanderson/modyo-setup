@@ -42,11 +42,17 @@ export default class Channels extends Component {
 
     return(
       <div>
-        <MainMenu />
-        <div id="main">
+        <div id="main" className={!this.props.showMenu ? "" : "showMenu"}>
           <div id="page-context">
             <div id="page-context-header">
-              <h1>Channels</h1>
+              <h1>
+                <button className="outer" onClick={this.props.openMenu} >
+                  <span id="nav-toggle" className={!this.props.showMenu ? "" : "active"}>
+                    <span></span>
+                  </span>
+                </button>
+                Channels
+              </h1>
             </div>
           </div>
           <div id="content-wrapper">
